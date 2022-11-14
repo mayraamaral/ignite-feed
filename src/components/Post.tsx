@@ -6,10 +6,15 @@ import { Avatar } from './Avatar';
 import { Comment } from './Comment';
 import styles from './Post.module.css';
 
+interface Content {
+  type: 'paragraph' | 'link',
+  content: string
+}
+
 interface IPost {
   author: { name: string, role: string, avatarUrl: string },
   publishedAt: Date;
-  content: { type: 'paragraph' | 'link', content: string }[]
+  content: Content[]
 }
 
 export const Post = ({ author, content, publishedAt }: IPost) => {
