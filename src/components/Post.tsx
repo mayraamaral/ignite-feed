@@ -14,7 +14,7 @@ interface Content {
 interface IPost {
   author: { name: string, role: string, avatarUrl: string },
   publishedAt: Date;
-  content: Content[]
+  content: { type: string, content: string }[]
 }
 
 export const Post = ({ author, content, publishedAt }: IPost) => {
